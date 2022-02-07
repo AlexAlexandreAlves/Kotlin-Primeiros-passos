@@ -1,100 +1,39 @@
-fun main(args: Array<String>) {
+fun main() {
+    println("Bem vindo ao Bytebank")
 
-    println("Welcome to Bitebank")
+    val contaCorrente = ContaCorrente(
+        titular = "Alex",
+        numero = 1000
+    )
 
-    val contaAlex = Conta("Alex", 1000)
-    contaAlex.deposita(200.0)
+    val contaPoupanca = ContaPoupanca(
+        titular = "Fran",
+        numero = 1001
+    )
 
-    val contaFran = Conta("Fran", 1001)
-    contaFran.deposita(300.0)
+    contaCorrente.deposita(1000.0)
+    contaPoupanca.deposita(1000.0)
 
-    println(contaAlex.titular)
-    println(contaAlex.numero)
-    println(contaAlex.saldo)
+    println("saldo corrente: ${contaCorrente.saldo}")
+    println("saldo poupança: ${contaPoupanca.saldo}")
 
-    println(contaFran.titular)
-    println(contaFran.numero)
-    println(contaFran.saldo)
+    contaCorrente.saca(100.0)
+    contaPoupanca.saca(100.0)
 
-    //Depósito
+    println("saldo após saque corrente: ${contaCorrente.saldo}")
+    println("saldo após saque poupança: ${contaPoupanca.saldo}")
 
-    println("Depositando na conta de Alex")
-    contaAlex.deposita(50.0)
-    println(contaAlex.saldo)
+    contaCorrente.transfere(100.0, contaPoupanca)
 
-    println("Depositando na conta de Fran")
-    contaFran.deposita(70.0)
-    println(contaFran.saldo)
+    println("saldo corrente após tranferir para poupança: ${contaCorrente.saldo}")
+    println("saldo poupança após receber transferência: ${contaPoupanca.saldo}")
 
-    //Saque
+    contaPoupanca.transfere(200.0, contaCorrente)
 
-    println("Sacando conta do Alex")
-    contaAlex.saca(200.0)
-    println(contaAlex.saldo)
+    println("saldo poupança após tranferir para corrente: ${contaPoupanca.saldo}")
+    println("saldo corrente após receber transferência: ${contaCorrente.saldo}")
 
-    if (contaAlex.saldo <= 0) {
-        println("Saldo zerado, não será permitido o saque")
-    } else {
-        println("Você possui saldo em sua conta!")
-    }
-
-    println("Sacando conta da Fran")
-    contaFran.saca(100.0)
-    println(contaFran.saldo)
-
-    if (contaFran.saldo <= 0) {
-        println("Saldo zerado, não será permitido o saque")
-    } else {
-        println("Você possui saldo em sua conta!")
-    }
-    println("Transferência da conta da Fran para o Alex")
-    if (contaFran.transfere(150.0, contaAlex)) {
-        println("Transferência concluída")
-    } else {
-        println("Falha na transferência")
-    }
-    println(contaAlex.saldo)
-    println(contaFran.saldo)
-
-    contaAlex.testaLacos()
-    contaFran.testaLacos()
-
-    //Testando Condições
-
-    fun testeCondicoes(saldo: Double) {
-
-        if (saldo > 0.0) {
-            println("Conta é positiva")
-        } else if (saldo == 0.0) {
-            println("Conta é neutra")
-        } else {
-            println("Conta é negativa")
-        }
-
-        val numeroX = 10
-        var numeroY = numeroX
-        numeroY++
-
-        println("numeroX $numeroX")
-        println("numeroY $numeroY")
-
-        val contaJoao = Conta("João", 1002)
-        contaJoao.titular = "João"
-        var contaMaria = Conta("Maria", 1003)
-        contaJoao.titular = "João"
-        contaMaria.titular = "Maria"
-
-        println("titular conta joão: ${contaJoao.titular}")
-        println("titular conta maria: ${contaMaria.titular}")
-
-        println(contaJoao)
-        println(contaMaria)
-
-    }
 }
-
-
-
 
 
 
