@@ -15,9 +15,9 @@ fun testeCondicoes(saldo: Double) {
     println("numeroX $numeroX")
     println("numeroY $numeroY")
 
-    val contaJoao = Conta("João", 1002)
+    val contaJoao = ContaCorrente("João", 1002)
     contaJoao.titular = "João"
-    var contaMaria = Conta("Maria", 1003)
+    var contaMaria = ContaPoupanca("Maria", 1003)
     contaJoao.titular = "João"
     contaMaria.titular = "Maria"
 
