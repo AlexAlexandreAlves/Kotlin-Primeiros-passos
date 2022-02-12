@@ -16,5 +16,4 @@ class Gerente(
             return salario
         }
 
-
 }

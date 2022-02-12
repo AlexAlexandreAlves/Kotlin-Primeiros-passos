@@ -10,11 +10,10 @@ class Diretor(
     salario = salario,
     senha = senha
 ) {
+
     override val bonificacao: Double
         get() {
-            println("bonificação diretor")
             return salario + plr
         }
-
 
 }

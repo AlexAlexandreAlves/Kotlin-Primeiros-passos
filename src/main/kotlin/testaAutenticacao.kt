@@ -10,7 +10,7 @@ fun testaAutenticacao() {
         nome = "Fran",
         cpf = "111.111.111-11",
         salario = 1000.0,
-        senha = 1234,
+        senha = 7894,
         plr = 200.0
     )
 
@@ -20,9 +20,9 @@ fun testaAutenticacao() {
         senha = 4567
 
     )
-
     val sistema = SistemaInterno()
-    sistema.entra(gerente, 1000)
-    sistema.entra(diretora, 2000)
-//    sistema.entra(cliente, 4567)
+    sistema.entra(gerente, 1234)
+    sistema.entra(diretora, 7894)
+    sistema.entra(cliente, 4567)
+
 }

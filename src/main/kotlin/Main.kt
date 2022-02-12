@@ -1,15 +1,3 @@
 fun main() {
-
-    testaAutenticacao()
-
+    testaContasDiferentes()
 }
-
-
-
-
-
-
-
-
-
-
